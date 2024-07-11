@@ -18,7 +18,7 @@ add_executable(instrumentation-app CalibrationHelper.c ${SOURCES})
 
 #Link the libraries
 find_package(CURL REQUIRED)
-target_link_libraries(instrumentation-app PRIVATE CURL::libcurl)
+target_link_libraries(instrumentation-app PRIVATE CURL::libcurl pthread)
 
 #Copy the board configuration files to the build directory
 file(GLOB CONFIG_FILES "${CMAKE_CURRENT_SOURCE_DIR}/config*.txt")
